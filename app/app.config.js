@@ -5,10 +5,7 @@
     .config(config);
 
   /* @ngInject */
-  function config($stateProvider, $urlRouterProvider, $locationProvider) {
-
-    // Remove the # from url
-    $locationProvider.html5Mode(true);
+  function config($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /home
     $urlRouterProvider.otherwise("/home");
