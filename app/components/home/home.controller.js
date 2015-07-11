@@ -2,24 +2,29 @@
   'use strict';
 
   angular
-    .module('myApp.home',[])
+    .module('myApp.home')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope'];
+  HomeController.$inject = ['dataService'];
 
   /* @ngInject */
-  function HomeController($scope) {
+  function HomeController(dataService) {
     /* jshint validthis: true */
     var vm = this;
-
     vm.activate = activate;
-    vm.title = 'HomeController';
 
     activate();
 
     ////////////////
 
     function activate() {
+      getActors();
+    }
+
+    function getActors() {
+      dataService.get(function(data){
+        vm.actors = data.data;
+      });
     }
   }
 

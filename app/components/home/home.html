@@ -1,1 +1,7 @@
-<p>This is the partial for HOME</p>
+<ul class="actor__list" ng-repeat="actor in vm.actors">
+  <li class="actor__item">
+    <a class="actor__link" href="/#/actors/{{actor.identifier}}" alt="{{vm.name}}">
+      <img class="actor__img" ng-src="{{actor.profile_path}}"/>
+      <span class="actor__name" ng-bind="actor.name"></span>
+    </a></li>
+</ul>
