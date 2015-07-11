@@ -13,28 +13,27 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <base href="/"
 </head>
 <body>
   <ul class="menu">
-    <li><a href="#/home">Home</a></li>
-    <li><a href="#/sort">Sort</a></li>
-    <li><a href="#/search">Search</a></li>
-    <li><a href="#/actors">Actors</a></li>
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="sort">Sort</a></li>
+    <li><a ui-sref="search">Search</a></li>
+    <li><a ui-sref="actors">Actors</a></li>
   </ul>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
+  <div ui-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app/app.module.js"></script>
   <script src="app/app.config.js"></script>
 

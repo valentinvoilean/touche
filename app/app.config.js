@@ -5,24 +5,35 @@
     .config(config);
 
   /* @ngInject */
-  function config($routeProvider) {
-    $routeProvider
-      .when('/home', {
+  function config($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    // Remove the # from url
+    $locationProvider.html5Mode(true);
+    //
+    // For any unmatched url, redirect to /home
+    $urlRouterProvider.otherwise("/home");
+    //
+    // Now set up the states
+    $stateProvider
+      .state('home', {
+        url:         '/home',
         templateUrl: 'app/components/home/home.html',
         controller:  'HomeController'
       })
-      .when('/search', {
+      .state('search', {
+        url:         '/search',
         templateUrl: 'app/components/search/search.html',
         controller:  'SearchController'
       })
-      .when('/sort', {
+      .state('sort', {
+        url:         '/sort',
         templateUrl: 'app/components/sort/sort.html',
         controller:  'SortController'
       })
-      .when('/actors', {
+      .state('actors', {
+        url:         '/actors',
         templateUrl: 'app/components/actors/actors.html',
         controller:  'ActorsController'
       })
-      .otherwise({redirectTo: '/home'});
   }
 })();

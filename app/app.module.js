@@ -4,7 +4,7 @@
   // Declare app level module which depends on views, and components
   angular
     .module('myApp', [
-      'ngRoute',
+      'ui.router',
       'myApp.home',
       'myApp.sort',
       'myApp.search',
