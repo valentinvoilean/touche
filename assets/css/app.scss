@@ -29,4 +29,31 @@
   }
 }
 
+/* APP */
+@font-face {
+    font-family: MyriadPro;
+    src: url(../fonts/MyriadPro-Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: MyriadPro;
+    src: url(../fonts/MyriadPro-Bold.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: MyriadPro;
+    src: url(../fonts/MyriadPro-Regular.otf);
+    font-weight: normal;
+}
+
+body {
+  background: #787882;
+  color: #fff;
+  font-family: MyriadPro, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+}
+
 

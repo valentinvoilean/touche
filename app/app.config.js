@@ -15,27 +15,27 @@
     // Now set up the states
     $stateProvider
       .state('home', {
-        url:         '/home',
-        templateUrl: 'app/components/home/home.html',
-        controller:  'HomeController',
+        url:          '/home',
+        templateUrl:  'app/components/home/home.html',
+        controller:   'HomeController',
         controllerAs: 'vm'
       })
       .state('search', {
-        url:         '/search',
-        templateUrl: 'app/components/search/search.html',
-        controller:  'SearchController',
+        url:          '/search?name&location&top&popularity',
+        templateUrl:  'app/components/search/search.html',
+        controller:   'SearchController',
         controllerAs: 'vm'
       })
       .state('sort', {
-        url:         '/sort',
-        templateUrl: 'app/components/sort/sort.html',
-        controller:  'SortController',
+        url:          '/sort/:sortBy',
+        templateUrl:  'app/components/sort/sort.html',
+        controller:   'SortController',
         controllerAs: 'vm'
       })
       .state('actors', {
-        url:         '/actors',
-        templateUrl: 'app/components/actors/actors.html',
-        controller:  'ActorsController',
+        url:          '/actor/:id',
+        templateUrl:  'app/components/actors/actors.html',
+        controller:   'ActorsController',
         controllerAs: 'vm'
       })
   }
