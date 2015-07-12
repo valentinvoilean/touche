@@ -249,6 +249,7 @@ body > header {
     width: calc(100% - 4vw);
     background-color: #fff;
     z-index: 3;
+    border-radius: 5px;
   }
 
   &__content {
@@ -261,6 +262,7 @@ body > header {
     color: #434752;
     box-sizing: border-box;
     padding: 13vw 3vw 3vw;
+    border-radius: 5px;
   }
 
   &__backButton {

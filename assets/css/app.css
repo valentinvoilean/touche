@@ -178,7 +178,8 @@ body > header {
   left: 2vw;
   width: calc(100% - 4vw);
   background-color: #fff;
-  z-index: 3; }
+  z-index: 3;
+  border-radius: 5px; }
 .profile__content {
   background: #fff;
   width: 96%;
@@ -188,7 +189,8 @@ body > header {
   overflow-y: scroll;
   color: #434752;
   box-sizing: border-box;
-  padding: 13vw 3vw 3vw; }
+  padding: 13vw 3vw 3vw;
+  border-radius: 5px; }
 .profile__backButton {
   background: url(../img/back.png);
   max-width: 30px;
