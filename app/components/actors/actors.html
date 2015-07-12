@@ -1,1 +1,20 @@
-<p>This is the partial for ACTORS.</p>
+<div class="profile__base" ng-repeat="actor in vm.actors | filter: {identifier : vm.actorId}">
+  <h1 class="profile__name" ng-bind="actor.name"></h1>
+
+  <div class="profile__description" ng-bind="actor.description"></div>
+
+  <ul class="profile__movies">
+    <li class="profile__movie" ng-repeat="movie in actor.known_for">
+      <img class="profile__movie-img" alt="{{movie.title}}" ng-src="{{movie.poster_path}}"/>
+
+      <h2 class="profile__movie-tile" ng-bind="movie.title"></h2>
+
+      <div class="profile__movie-date" ng-bind="movie.release_date | date:'dd/MM/yyyy'"></div>
+      <div class="profile__movie-rating">
+        <span class="profile__movie-ratingScore" ng-bind="movie.vote_average"></span>
+        <span class="profile__movie-ratingVotes" ng-pluralize count="movie.vote_count"
+              when="{'one': '1 vote', 'other': '{} votes'}"></span>
+      </div>
+    </li>
+  </ul>
+</div>

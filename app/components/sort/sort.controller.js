@@ -5,10 +5,10 @@
     .module('myApp.sort', [])
     .controller('SortController', SortController);
 
-  SortController.$inject = ['$scope'];
+  SortController.$inject = ['$stateParams'];
 
   /* @ngInject */
-  function SortController($scope) {
+  function SortController($stateParams) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -20,6 +20,7 @@
     ////////////////
 
     function activate() {
+      console.log($stateParams)
     }
 
   }
