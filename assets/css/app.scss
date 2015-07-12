@@ -296,6 +296,7 @@ body > header {
   &__img {
     display: table-cell;
     width: 35vw;
+    height: 52vw;
     padding-right: 5vw;
     padding-bottom: 1vw;
 
@@ -315,7 +316,6 @@ body > header {
     font-size: 20px;
     line-height: 20px;
     margin:0;
-    float: left;
   }
 
   &__rating {

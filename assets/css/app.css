@@ -211,6 +211,7 @@ body > header {
 .movies__img {
   display: table-cell;
   width: 35vw;
+  height: 52vw;
   padding-right: 5vw;
   padding-bottom: 1vw; }
   .movies__img:last-child {
@@ -223,8 +224,7 @@ body > header {
 .movies__title {
   font-size: 20px;
   line-height: 20px;
-  margin: 0;
-  float: left; }
+  margin: 0; }
 .movies__rating {
   position: absolute;
   bottom: 1vw;
