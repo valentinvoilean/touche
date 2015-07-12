@@ -1,20 +1,20 @@
 /* APP */
 @font-face {
-    font-family: MyriadPro;
-    src: url(../fonts/MyriadPro-Bold.otf);
-    font-weight: bold;
+  font-family: MyriadPro;
+  src: url(../fonts/MyriadPro-Bold.otf);
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: MyriadPro;
-    src: url(../fonts/MyriadPro-Bold.otf);
-    font-weight: 300;
+  font-family: MyriadPro;
+  src: url(../fonts/MyriadPro-Bold.otf);
+  font-weight: 300;
 }
 
 @font-face {
-    font-family: MyriadPro;
-    src: url(../fonts/MyriadPro-Regular.otf);
-    font-weight: normal;
+  font-family: MyriadPro;
+  src: url(../fonts/MyriadPro-Regular.otf);
+  font-weight: normal;
 }
 
 body {
@@ -137,6 +137,12 @@ body > header {
     text-decoration: none;
     color: inherit;
     font-size: 24px;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   &__location {
@@ -216,5 +222,124 @@ body > header {
     &:last-child {
       padding-left: 5vw;
     }
+  }
+}
+
+/* Actor profile */
+
+.profile {
+
+  &__base {
+    background: rgba(0, 0, 0, 0.4);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    .actor__description { width: 100%; }
+  }
+
+  &__base > header {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    width: calc(100% - 4vw);
+    background-color: #fff;
+    z-index: 3;
+  }
+
+  &__content {
+    background: #fff;
+    width: 96%;
+    height: calc(100% - 4vw);
+    margin: 2vw;
+    float: left;
+    overflow-y: scroll;
+    color: #434752;
+    box-sizing: border-box;
+    padding: 13vw 3vw 3vw;
+  }
+
+  &__backButton {
+    background: url(../img/back.png);
+    max-width: 30px;
+    max-height: 30px;
+    width: 3vw;
+    height: 3vw;
+    background-size: 100%;
+    margin: 5vw;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+  }
+
+}
+
+
+/* Movies styles */
+
+.movies {
+
+  &__table {
+    display: table;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__img {
+    display: table-cell;
+    width: 35vw;
+    padding-right: 5vw;
+    padding-bottom: 1vw;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__details {
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+    padding: 1vw 0;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 20px;
+    margin:0;
+    float: left;
+  }
+
+  &__rating {
+    position: absolute;
+    bottom: 1vw;
+    left: 0;
+    background: #efefef;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 10px;
+  }
+
+  &__score {
+    display: block;
+    text-align: center;
+    font-size: 7vw;
+    margin-top: 3vw;
+    line-height: 7vw;
+    font-weight: bold;
+  }
+
+  &__votes {
+    display: block;
+    text-align: center;
+    margin-top: 1vw;
   }
 }

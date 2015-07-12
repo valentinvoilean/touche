@@ -101,7 +101,11 @@ body > header {
   float: left;
   text-decoration: none;
   color: inherit;
-  font-size: 24px; }
+  font-size: 24px;
+  margin: 0; }
+  .actor__name a {
+    color: inherit;
+    text-decoration: none; }
 .actor__location {
   float: left;
   clear: left;
@@ -155,5 +159,90 @@ body > header {
     width: 20vw; }
   .actor__cell:last-child {
     padding-left: 5vw; }
+
+/* Actor profile */
+.profile__base {
+  background: rgba(0, 0, 0, 0.4);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; }
+  .profile__base .actor__description {
+    width: 100%; }
+.profile__base > header {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  width: calc(100% - 4vw);
+  background-color: #fff;
+  z-index: 3; }
+.profile__content {
+  background: #fff;
+  width: 96%;
+  height: calc(100% - 4vw);
+  margin: 2vw;
+  float: left;
+  overflow-y: scroll;
+  color: #434752;
+  box-sizing: border-box;
+  padding: 13vw 3vw 3vw; }
+.profile__backButton {
+  background: url(../img/back.png);
+  max-width: 30px;
+  max-height: 30px;
+  width: 3vw;
+  height: 3vw;
+  background-size: 100%;
+  margin: 5vw;
+  cursor: pointer;
+  border: 0;
+  outline: none; }
+
+/* Movies styles */
+.movies__table {
+  display: table;
+  margin: 0;
+  padding: 0; }
+.movies__row {
+  display: table-row; }
+.movies__img {
+  display: table-cell;
+  width: 35vw;
+  padding-right: 5vw;
+  padding-bottom: 1vw; }
+  .movies__img:last-child {
+    padding-bottom: 0; }
+.movies__details {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  padding: 1vw 0; }
+.movies__title {
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0;
+  float: left; }
+.movies__rating {
+  position: absolute;
+  bottom: 1vw;
+  left: 0;
+  background: #efefef;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 10px; }
+.movies__score {
+  display: block;
+  text-align: center;
+  font-size: 7vw;
+  margin-top: 3vw;
+  line-height: 7vw;
+  font-weight: bold; }
+.movies__votes {
+  display: block;
+  text-align: center;
+  margin-top: 1vw; }
 
 /*# sourceMappingURL=app.css.map */
