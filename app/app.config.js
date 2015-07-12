@@ -10,14 +10,14 @@
   function config($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /home
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/actors");
     //
     // Now set up the states
     $stateProvider
-      .state('home', {
-        url:          '/home',
-        templateUrl:  'app/components/home/home.html',
-        controller:   'HomeController',
+      .state('actors', {
+        url:          '/actors',
+        templateUrl:  'app/components/actors/actors.html',
+        controller:   'ActorsController',
         controllerAs: 'vm'
       })
       .state('search', {
@@ -32,10 +32,10 @@
         controller:   'SortController',
         controllerAs: 'vm'
       })
-      .state('actors', {
-        url:          '/actor/:id',
-        templateUrl:  'app/components/actors/actors.html',
-        controller:   'ActorsController',
+      .state('profile', {
+        url:          '/profile/:id',
+        templateUrl:  'app/components/profile/profile.html',
+        controller:   'ProfileController',
         controllerAs: 'vm'
       })
   }

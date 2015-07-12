@@ -6,9 +6,9 @@
     .module('myApp', [
       'swagger-client',
       'ui.router',
-      'myApp.home',
+      'myApp.actors',
       'myApp.sort',
       'myApp.search',
-      'myApp.actors'
+      'myApp.profile'
     ])
 })();

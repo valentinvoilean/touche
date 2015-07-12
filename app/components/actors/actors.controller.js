@@ -2,28 +2,31 @@
   'use strict';
 
   angular
-    .module('myApp.actors', [])
+    .module('myApp.actors')
     .controller('ActorsController', ActorsController);
 
-  ActorsController.$inject = ['$stateParams', 'dataService'];
+  ActorsController.$inject = ['dataService'];
 
   /* @ngInject */
-  function ActorsController($stateParams, dataService) {
+  function ActorsController(dataService) {
     /* jshint validthis: true */
     var vm = this;
-
     vm.activate = activate;
-    vm.title = 'ActorsController';
-    vm.actorId = $stateParams.id;
 
     activate();
 
     ////////////////
 
     function activate() {
+      getActors();
+    }
+
+    function getActors() {
       dataService.get(function(data){
         vm.actors = data.data;
       });
     }
   }
+
 })();
+

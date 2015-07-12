@@ -2,31 +2,28 @@
   'use strict';
 
   angular
-    .module('myApp.home')
-    .controller('HomeController', HomeController);
+    .module('myApp.profile', [])
+    .controller('ProfileController', ProfileController);
 
-  HomeController.$inject = ['dataService'];
+  ProfileController.$inject = ['$stateParams', 'dataService'];
 
   /* @ngInject */
-  function HomeController(dataService) {
+  function ProfileController($stateParams, dataService) {
     /* jshint validthis: true */
     var vm = this;
+
     vm.activate = activate;
+    vm.title = 'ProfileController';
+    vm.actorId = $stateParams.id;
 
     activate();
 
     ////////////////
 
     function activate() {
-      getActors();
-    }
-
-    function getActors() {
       dataService.get(function(data){
         vm.actors = data.data;
       });
     }
   }
-
 })();
-

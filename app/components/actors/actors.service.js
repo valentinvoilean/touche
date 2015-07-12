@@ -6,7 +6,7 @@
   'use strict';
 
   angular
-    .module('myApp.home')
+    .module('myApp.actors')
     .value('url', '/data/sampleActors.json')
     .factory('dataService', dataService);
 
