@@ -20,19 +20,19 @@
         controller:   'ActorsController',
         controllerAs: 'vm'
       })
-      .state('search', {
+      .state('actors.search', {
         url:          '/search?name&location&top&popularity',
         templateUrl:  'app/components/search/search.html',
         controller:   'SearchController',
         controllerAs: 'vm'
       })
-      .state('sort', {
+      .state('actors.sort', {
         url:          '/sort/:sortBy',
         templateUrl:  'app/components/sort/sort.html',
         controller:   'SortController',
         controllerAs: 'vm'
       })
-      .state('profile', {
+      .state('actors.profile', {
         url:          '/profile/:id',
         templateUrl:  'app/components/profile/profile.html',
         controller:   'ProfileController',
