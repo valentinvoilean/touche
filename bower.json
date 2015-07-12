@@ -13,6 +13,7 @@
     "angular-ui-router": "~0.2.15",
     "angular-resource": "~1.4.2",
     "normalize.css": "~3.0.3",
-    "swagger-angular-client": "~0.1.12"
+    "swagger-angular-client": "~0.1.12",
+    "angular-animate": "~1.4.2"
   }
 }
