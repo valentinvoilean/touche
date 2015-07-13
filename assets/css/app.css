@@ -172,25 +172,25 @@ body > header {
   z-index: 2; }
   .profile__base .actor__description {
     width: 100%; }
-.profile__base > header {
-  position: absolute;
-  top: 2vw;
-  left: 2vw;
-  width: calc(100% - 4vw);
-  background-color: #fff;
-  z-index: 3;
-  border-radius: 5px; }
 .profile__content {
   background: #fff;
   width: 96%;
   height: calc(100% - 4vw);
   margin: 2vw;
-  float: left;
-  overflow-y: scroll;
   color: #434752;
   box-sizing: border-box;
-  padding: 13vw 3vw 3vw;
+  padding: 3vw;
+  border-radius: 5px;
+  z-index: 3;
+  position: relative; }
+.profile__content > header {
+  width: calc(100% - 4vw);
+  background-color: #fff;
+  z-index: 4;
   border-radius: 5px; }
+.profile__content > article {
+  height: calc(100% - 65px);
+  overflow-y: scroll; }
 .profile__backButton {
   background: url(../img/back.png);
   max-width: 30px;
