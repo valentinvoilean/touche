@@ -1,5 +1,6 @@
 /**
- * Home Service
+ * Actors Service
+ * -- load the actors from json
  *
  */
 (function () {

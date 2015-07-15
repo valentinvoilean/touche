@@ -163,13 +163,15 @@ body > header {
 /* Actor profile */
 .profile__base {
   background: rgba(0, 0, 0, 0.4);
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; }
+  z-index: 2;
+  display: none; }
+  .profile__base.profile__animate {
+    display: block; }
   .profile__base .actor__description {
     width: 100%; }
 .profile__content {
@@ -190,7 +192,7 @@ body > header {
   border-radius: 5px; }
 .profile__content > article {
   height: calc(100% - 65px);
-  overflow-y: scroll; }
+  overflow-y: auto; }
 .profile__backButton {
   background: url(../img/back.png);
   max-width: 30px;

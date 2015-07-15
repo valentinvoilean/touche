@@ -15,7 +15,7 @@
     // Now set up the states
     $stateProvider
       .state('actors', {
-        url:          '/actors',
+        url:          '/actors?id',
         templateUrl:  'app/components/actors/actors.html',
         controller:   'ActorsController',
         controllerAs: 'vm'
@@ -30,12 +30,6 @@
         url:          '/sort/:sortBy',
         templateUrl:  'app/components/sort/sort.html',
         controller:   'SortController',
-        controllerAs: 'vm'
-      })
-      .state('actors.profile', {
-        url:          '/profile/:id',
-        templateUrl:  'app/components/profile/profile.html',
-        controller:   'ProfileController',
         controllerAs: 'vm'
       })
   }
