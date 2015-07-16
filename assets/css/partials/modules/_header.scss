@@ -11,13 +11,21 @@
 }
 
 .search {
+  @include rem(height, 55px);
+  @include rem(width, 55px);
   float: right;
   background: url(../img/mglass.png);
-  max-width: 130px;
-  max-height: 130px;
   background-size: 100%;
-  width: 20vw;
-  height: 20vw;
+
+  @include breakpoint($tablet) {
+    @include rem(height, 85px);
+    @include rem(width, 85px);
+  }
+
+  @include breakpoint($desktop) {
+    @include rem(height, 130px);
+    @include rem(width, 130px);
+  }
 
   &:hover {
     background: url(../img/mglass_green.png);
@@ -27,14 +35,22 @@
 }
 
 .orderBy {
+  @include rem(height, 55px);
+  @include rem(width, 55px);
   float: right;
   position: relative;
   background: url(../img/orderby.png);
-  max-width: 130px;
-  max-height: 130px;
   background-size: 100%;
-  width: 20vw;
-  height: 20vw;
+
+  @include breakpoint($tablet) {
+    @include rem(height, 85px);
+    @include rem(width, 85px);
+  }
+
+  @include breakpoint($desktop) {
+    @include rem(height, 130px);
+    @include rem(width, 130px);
+  }
 
   &:hover {
     background: url(../img/orderby-selected.png);
@@ -47,29 +63,40 @@
   }
 
   &__list {
+    @include rem(top, 55px);
+    @include rem(line-height, 55px);
+    @include rem(font-size, 16px);
     list-style: none;
     display: none;
     position: absolute;
-    background: #00a191;
-    top: 20vw;
-    line-height: 20vw;
-    font-size: 5vw;
+    background: $c4;
     right: 0;
     margin: 0;
     padding: 0;
     white-space: nowrap;
-    z-index: 2;
+    z-index: index($z-layers, topnav);
+
+    @include breakpoint($tablet) {
+      @include rem(top, 85px);
+      @include rem(line-height, 85px);
+      @include rem(font-size, 20px);
+    }
+
+    @include breakpoint($desktop) {
+      @include rem(top, 130px);
+      @include rem(line-height, 130px);
+      @include rem(font-size, 24px);
+    }
   }
 
   &__item {
     display: block;
     margin: 0;
     padding: 0 10vw;
-    border-bottom: 1px solid #fff;
+    border-bottom: rem(1px) solid $c2;
 
     &:last-child {
       border-bottom: none;
     }
-
   }
 }

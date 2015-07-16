@@ -1,35 +1,24 @@
-/// Fonts ///
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Bold.otf);
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Bold.otf);
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Regular.otf);
-  font-weight: normal;
-}
-/// FONTS ///
-
+@import "fonts";
+@import "colors";
 
 body {
-  background: #787882;
-  color: #fff;
+  background: $c1;
+  color: $c2;
   font-family: MyriadPro, sans-serif;
   font-weight: normal;
-  font-size: 12px;
+  font-size: $base-font-size;
 }
 
 body > header {
-  height: 20vw;
-  max-height: 130px;
-  background: #000;
+  @include rem(height, 55px);
+  background: $c3;
   width: 100%;
+
+  @include breakpoint($tablet) {
+    @include rem(height, 85px);
+  }
+
+  @include breakpoint($desktop) {
+    @include rem(height, 130px);
+  }
 }
