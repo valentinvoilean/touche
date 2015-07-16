@@ -1,383 +1,65 @@
 /* APP */
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Bold.otf);
-  font-weight: bold;
-}
 
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Bold.otf);
-  font-weight: 300;
-}
+$base-font-size : 16px;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
 
-@font-face {
-  font-family: MyriadPro;
-  src: url(../fonts/MyriadPro-Regular.otf);
-  font-weight: normal;
-}
+$z-layers: lightbox;
 
-body {
-  background: #787882;
-  color: #fff;
-  font-family: MyriadPro, sans-serif;
-  font-weight: normal;
-  font-size: 12px;
-}
+/* Table of content */
+/* 1.  Functions
+   2.  Mixins
+   3.  Breakpoints
+   4.  Base styles
+   5.  Header
+   6.  Actors list
+   7.  Actor profile
+   8.  Movies list
+*/
 
-body > header {
-  height: 20vw;
-  max-height: 130px;
-  background: #000;
-  width: 100%;
-}
+/* =====================
+   1. Functions
+   ===================== */
+@import "partials/core/functions";
 
-.logo {
-  display: block;
-  float: left;
-  height: 100%;
-  width: auto;
 
-  img {
-    height: 100%;
-    width: auto;
-  }
-}
+/* =====================
+   2. Mixins
+   ===================== */
+@import "partials/core/mixins";
 
-.search {
-  float: right;
-  background: url(../img/mglass.png);
-  max-width: 130px;
-  max-height: 130px;
-  background-size: 100%;
-  width: 20vw;
-  height: 20vw;
 
-  &:hover {
-    background: url(../img/mglass_green.png);
-    background-size: 100%;
-    cursor: pointer;
-  }
-}
+/* =====================
+   3. Breakpoints
+   ===================== */
+@import "partials/core/breakpoints";
 
-.orderBy {
-  float: right;
-  position: relative;
-  background: url(../img/orderby.png);
-  max-width: 130px;
-  max-height: 130px;
-  background-size: 100%;
-  width: 20vw;
-  height: 20vw;
 
-  &:hover {
-    background: url(../img/orderby-selected.png);
-    background-size: 100%;
-    cursor: pointer;
+/* =====================
+   4. Base styles
+   ===================== */
+@import "partials/modules/base";
 
-    & > .orderBy__list {
-      display: block;
-    }
-  }
 
-  &__list {
-    list-style: none;
-    display: none;
-    position: absolute;
-    background: #00a191;
-    top: 20vw;
-    line-height: 20vw;
-    font-size: 5vw;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    z-index: 2;
-  }
+/* =====================
+   5. Header
+   ===================== */
+@import "partials/modules/header";
 
-  &__item {
-    display: block;
-    margin: 0;
-    padding: 0 10vw;
-    border-bottom: 1px solid #fff;
 
-    &:last-child {
-      border-bottom: none;
-    }
+/* =====================
+   6. Actors List
+   ===================== */
+@import "partials/modules/actor-list";
 
-  }
-}
 
-/* Actors list - home view */
+/* =====================
+   7. Actor Profile
+   ===================== */
+@import "partials/modules/actor-profile";
 
-.actor {
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__link {
-    display: block;
-  }
-
-  &__item {
-    float: left;
-    margin: 1vw 2%;
-    border-radius: 5px;
-    padding: 20px;
-    overflow: hidden;
-    position: relative;
-    width: 96%;
-    box-sizing: border-box;
-
-    &:first-child { margin-top: 10px; }
-
-    &:last-child { margin-bottom: 10px; }
-
-    &:nth-child(odd) {
-      background: #454954;
-      color: #fff;
-    }
-
-    &:nth-child(even) {
-      background: #fff;
-      color: #434752;
-    }
-
-  }
-
-  &__imgWrapper {
-    border: 5px solid black;
-    border-radius: 20vw;
-    width: 20vw;
-    height: 20vw;
-    overflow: hidden;
-    display: block;
-  }
-
-  &__img {
-    width: 100%;
-    margin-top: -20%;
-    height: auto;
-  }
-
-  &__name {
-    float: left;
-    text-decoration: none;
-    color: inherit;
-    font-size: 24px;
-    margin: 0;
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-
-  &__location {
-    float: left;
-    clear: left;
-    font-style: italic;
-
-    &:before {
-      content: "";
-      background: url(../img/pin_black.png) no-repeat;
-      width: 12px;
-      height: 12px;
-      float: left;
-      background-size: 100%;
-
-      .actor__item:nth-child(odd) & {
-        background: url(../img/pin_white.png) no-repeat;
-        background-size: 100%;
-      }
-    }
-  }
-
-  &__description {
-    float: left;
-    width: 70vw;
-  }
-
-  &__rate {
-    width: 20vw;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 20vw;
-    text-align: center;
-    background: #eeeeee;
-    color: #3f4650;
-    border-radius: 5px;
-    font-size: 5vw;
-    font-weight: bold;
-    overflow: hidden;
-
-    &-header {
-      width: 100%;
-      height: 10%;
-      background: #72a201;
-
-      .actor__item:nth-child(odd) & {
-        background: #01b7e6;
-      }
-    }
-
-    &-table {
-      display: table;
-      width: 100%;
-      height: 90%;
-    }
-
-    &-result {
-      display: table-cell;
-      vertical-align: middle;
-    }
-  }
-
-  &__table {
-    display: table;
-    width: 100%;
-  }
-
-  &__cell {
-    display: table-cell;
-    vertical-align: middle;
-
-    &:first-child {
-      width: 20vw;
-    }
-
-    &:last-child {
-      padding-left: 5vw;
-    }
-  }
-}
-
-/* Actor profile */
-
-.profile {
-
-  &__base {
-    background: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    display: none;
-
-    &.profile__animate {
-      display: block;
-    }
-
-    .actor__description { width: 100%; }
-  }
-
-  &__content {
-    background: #fff;
-    width: 96%;
-    height: calc(100% - 4vw);
-    margin: 2vw;
-    color: #434752;
-    box-sizing: border-box;
-    padding: 3vw;
-    border-radius: 5px;
-    z-index: 3;
-    position: relative;
-  }
-
-  &__content > header {
-    width: calc(100% - 4vw);
-    background-color: #fff;
-    z-index: 4;
-    border-radius: 5px;
-  }
-
-  &__content > article {
-    height: calc(100% - 65px);
-    overflow-y: auto;
-  }
-
-  &__backButton {
-    background: url(../img/back.png);
-    max-width: 30px;
-    max-height: 30px;
-    width: 3vw;
-    height: 3vw;
-    background-size: 100%;
-    margin: 5vw;
-    cursor: pointer;
-    border: 0;
-    outline: none;
-  }
-
-}
-
-/* Movies styles */
-
-.movies {
-
-  &__table {
-    display: table;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__row {
-    display: table-row;
-  }
-
-  &__img {
-    display: table-cell;
-    width: 35vw;
-    height: 52vw;
-    padding-right: 5vw;
-    padding-bottom: 1vw;
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  &__details {
-    display: table-cell;
-    vertical-align: top;
-    position: relative;
-    padding: 1vw 0;
-  }
-
-  &__title {
-    font-size: 20px;
-    line-height: 20px;
-    margin: 0;
-  }
-
-  &__rating {
-    position: absolute;
-    bottom: 1vw;
-    left: 0;
-    background: #efefef;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 10px;
-  }
-
-  &__score {
-    display: block;
-    text-align: center;
-    font-size: 7vw;
-    margin-top: 3vw;
-    line-height: 7vw;
-    font-weight: bold;
-  }
-
-  &__votes {
-    display: block;
-    text-align: center;
-    margin-top: 1vw;
-  }
-}
+/* =====================
+   8. Movies List
+   ===================== */
+@import "partials/modules/movies-list";

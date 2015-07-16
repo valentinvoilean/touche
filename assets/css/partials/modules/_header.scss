@@ -1,0 +1,75 @@
+.logo {
+  display: block;
+  float: left;
+  height: 100%;
+  width: auto;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.search {
+  float: right;
+  background: url(../img/mglass.png);
+  max-width: 130px;
+  max-height: 130px;
+  background-size: 100%;
+  width: 20vw;
+  height: 20vw;
+
+  &:hover {
+    background: url(../img/mglass_green.png);
+    background-size: 100%;
+    cursor: pointer;
+  }
+}
+
+.orderBy {
+  float: right;
+  position: relative;
+  background: url(../img/orderby.png);
+  max-width: 130px;
+  max-height: 130px;
+  background-size: 100%;
+  width: 20vw;
+  height: 20vw;
+
+  &:hover {
+    background: url(../img/orderby-selected.png);
+    background-size: 100%;
+    cursor: pointer;
+
+    & > .orderBy__list {
+      display: block;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background: #00a191;
+    top: 20vw;
+    line-height: 20vw;
+    font-size: 5vw;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  &__item {
+    display: block;
+    margin: 0;
+    padding: 0 10vw;
+    border-bottom: 1px solid #fff;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+  }
+}

@@ -1,0 +1,64 @@
+/* Movies styles */
+
+.movies {
+
+  &__table {
+    display: table;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__img {
+    display: table-cell;
+    width: 35vw;
+    height: 52vw;
+    padding-right: 5vw;
+    padding-bottom: 1vw;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__details {
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+    padding: 1vw 0;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  &__rating {
+    position: absolute;
+    bottom: 1vw;
+    left: 0;
+    background: #efefef;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 10px;
+  }
+
+  &__score {
+    display: block;
+    text-align: center;
+    font-size: 7vw;
+    margin-top: 3vw;
+    line-height: 7vw;
+    font-weight: bold;
+  }
+
+  &__votes {
+    display: block;
+    text-align: center;
+    margin-top: 1vw;
+  }
+}
