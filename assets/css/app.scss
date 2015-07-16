@@ -1,17 +1,11 @@
 /* APP */
-@import "breakpoint";
-
-$base-font-size : 16px;
-$rem-fallback: false !default;
-$rem-px-only: false !default;
-
-$z-layers: topnav, topnavFlyout, lightbox, lightboxContent;
 
 /* Table of content */
-/* 1.  Functions
-   2.  Mixins
-   3.  Breakpoints
-   4.  Base styles
+/*
+   1.  Base styles
+   2.  Functions
+   3.  Mixins
+   4.  Breakpoints
    5.  Header
    6.  Actors list
    7.  Actor profile
@@ -19,48 +13,49 @@ $z-layers: topnav, topnavFlyout, lightbox, lightboxContent;
 */
 
 /* =====================
-   1. Functions
+   1. Base styles
+   ===================== */
+@import "partials/core/base";
+
+/* =====================
+   2. Functions
    ===================== */
 @import "partials/core/functions";
 
-
 /* =====================
-   2. Mixins
+   3. Mixins
    ===================== */
 @import "partials/core/mixins";
 
-
 /* =====================
-   3. Breakpoints
+   4. Breakpoints
    ===================== */
 @import "partials/core/breakpoints";
-
-
-/* =====================
-   4. Base styles
-   ===================== */
-@import "partials/modules/base";
-
 
 /* =====================
    5. Header
    ===================== */
 @import "partials/modules/header";
 
-
 /* =====================
    6. Actors List
    ===================== */
 @import "partials/modules/actor-list";
-
 
 /* =====================
    7. Actor Profile
    ===================== */
 @import "partials/modules/actor-profile";
 
-
 /* =====================
    8. Movies List
    ===================== */
 @import "partials/modules/movies-list";
+
+body {
+  background: $c1;
+  color: $c2;
+  font-family: MyriadPro, sans-serif;
+  font-weight: normal;
+  font-size: $base-font-size;
+}

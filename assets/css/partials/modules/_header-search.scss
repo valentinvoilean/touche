@@ -1,0 +1,23 @@
+.search {
+  @include rem(height, 55px);
+  @include rem(width, 55px);
+  float: right;
+  background: url(../img/mglass.png);
+  background-size: 100%;
+
+  @include breakpoint($tablet) {
+    @include rem(height, 85px);
+    @include rem(width, 85px);
+  }
+
+  @include breakpoint($desktop) {
+    @include rem(height, 130px);
+    @include rem(width, 130px);
+  }
+
+  &:hover {
+    background: url(../img/mglass_green.png);
+    background-size: 100%;
+    cursor: pointer;
+  }
+}
