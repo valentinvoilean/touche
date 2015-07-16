@@ -59,6 +59,28 @@ body > header {
     background: url(../img/orderby-selected.png);
     background-size: 100%;
     cursor: pointer; }
+    .orderBy:hover > .orderBy__list {
+      display: block; }
+  .orderBy__list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background: #00a191;
+    top: 20vw;
+    line-height: 20vw;
+    font-size: 5vw;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    z-index: 2; }
+  .orderBy__item {
+    display: block;
+    margin: 0;
+    padding: 0 10vw;
+    border-bottom: 1px solid #fff; }
+    .orderBy__item:last-child {
+      border-bottom: none; }
 
 /* Actors list - home view */
 .actor__list {
