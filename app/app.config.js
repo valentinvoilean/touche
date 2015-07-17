@@ -15,7 +15,7 @@
     // Now set up the states
     $stateProvider
       .state('actors', {
-        url:          '/actors?id',
+        url:          '/actors?&orderBy&id',
         templateUrl:  'app/components/actors/actors.html',
         controller:   'ActorsController',
         controllerAs: 'vm'
@@ -24,12 +24,6 @@
         url:          '/search?name&location&top&popularity',
         templateUrl:  'app/components/search/search.html',
         controller:   'SearchController',
-        controllerAs: 'vm'
-      })
-      .state('actors.sort', {
-        url:          '/sort/:sortBy',
-        templateUrl:  'app/components/sort/sort.html',
-        controller:   'SortController',
         controllerAs: 'vm'
       })
   }
