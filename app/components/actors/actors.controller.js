@@ -23,6 +23,7 @@
 
     function activate() {
       getActors();
+      addEvents();
     }
 
     function getActors() {
@@ -37,6 +38,12 @@
 
     function order(predicate, reverse) {
       vm.actors = orderBy(vm.actors, predicate, reverse);
+    }
+
+    function addEvents() {
+      $rootScope.$on('search:options', function (event, data) {
+        console.log(data);
+      });
     }
 
   }

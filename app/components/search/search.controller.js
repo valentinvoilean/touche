@@ -14,19 +14,41 @@
 
     vm.activate = activate;
     vm.title = 'SearchController';
+    vm.submit = filterList;
 
     activate();
 
     ////////////////
 
     function activate() {
+      watchHeaderSearchIcon();
+    }
 
+    /**
+     * Display the search flyout on click the search icon
+     */
+    function watchHeaderSearchIcon() {
       $rootScope.$watch('actorSearch', function () {
         if ($rootScope.actorSearch) {
-          console.log($rootScope.actorSearch);
           vm.showSearch = 'search__animate'
         }
       });
     }
+
+    /**
+     * Filter the list results on submit the form
+     */
+    function filterList() {
+      var options = {};
+
+      if (vm.name) { options.name = vm.name; }
+      if (vm.location) { options.location = vm.location; }
+      if (vm.top) { options.top = vm.top; }
+      if (vm.popularityMin) { options.popularityMin = vm.popularityMin; }
+      if (vm.popularityMax) { options.popularityMax = vm.popularityMax; }
+
+      $rootScope.$emit('search:options', options);
+    }
+
   }
 })();
