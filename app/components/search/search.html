@@ -1,7 +1,7 @@
 <section class="search__base" ng-class="vm.showSearch">
   <div class="search__content">
     <h2 class="search__hl">Search</h2>
-    <div class="search__closeBtn"></div>
+    <div class="search__closeBtn" ng-click="vm.showSearch=''"></div>
     <form>
       <label class="search__label" for="name">name</label>
       <input class="search__name" id="name" name="name" placeholder="write name">
@@ -9,6 +9,8 @@
       <label class="search__label" for="location">location</label>
       <select class="search__location" name="location" id="location">
         <option>select location</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="California">California</option>
       </select>
 
       <label class="search__label">is top?</label>

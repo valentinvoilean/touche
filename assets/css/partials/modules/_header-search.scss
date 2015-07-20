@@ -1,24 +1,27 @@
 .search {
-  @include rem(height, 55px);
-  @include rem(width, 55px);
-  float: right;
-  background: url(../img/mglass.png);
-  background-size: 100%;
 
-  @include breakpoint($tablet) {
-    @include rem(height, 85px);
-    @include rem(width, 85px);
-  }
-
-  @include breakpoint($desktop) {
-    @include rem(height, 130px);
-    @include rem(width, 130px);
-  }
-
-  &:hover {
-    background: url(../img/mglass_green.png);
+  &__icon {
+    @include rem(height, 55px);
+    @include rem(width, 55px);
+    float: right;
+    background: url(../img/mglass.png);
     background-size: 100%;
-    cursor: pointer;
+
+    @include breakpoint($tablet) {
+      @include rem(height, 85px);
+      @include rem(width, 85px);
+    }
+
+    @include breakpoint($desktop) {
+      @include rem(height, 130px);
+      @include rem(width, 130px);
+    }
+
+    &:hover {
+      background: url(../img/mglass_green.png);
+      background-size: 100%;
+      cursor: pointer;
+    }
   }
 
   &__base {
@@ -153,18 +156,32 @@
   }
 
   &__radio {
-    float: left;
-    clear: left;
+    display: none;
 
-    & + .search__radio { margin-top: 10px; }
+    &:checked + .search__radioLabel:before {
+      background: url(../img/radiobutton-selected.png);
+      background-size: 100%;
+    }
   }
 
   &__radioLabel {
+    @include rem(font-size, 14px);
+    @include rem(margin, 5px 0);
     float: left;
-    margin-left: 10px;
-    font-size: 14px;
-    font-weight: normal;
+    clear: both;
+    font-weight: 400;
     color: $c5;
+
+    &:before {
+      @include rem(width, 16px);
+      @include rem(height, 16px);
+      @include rem(margin-right, 10px);
+      content: "";
+      background: url(../img/radiobutton.png);
+      background-size: 100%;
+      display: block;
+      float: left;
+    }
   }
 
   &__range {
