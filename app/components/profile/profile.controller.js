@@ -5,7 +5,7 @@
     .module('myApp.profile', [])
     .controller('ProfileController', ProfileController);
 
-  ProfileController.$inject = ['$scope','$stateParams', 'dataService'];
+  ProfileController.$inject = ['$scope', '$stateParams', 'dataService'];
 
   /* @ngInject */
   function ProfileController($scope, $stateParams, dataService) {
@@ -21,15 +21,15 @@
     ////////////////
 
     function activate() {
-      dataService.get(function(data){
+      dataService.get(function (data) {
         vm.actors = data.data;
       });
 
-      $scope.$watch('vm.actorProfile', function() {
+      $scope.$watch('vm.actorProfile', function () {
         if (vm.actorProfile) {
           vm.showProfile = 'profile__animate'
         }
-     });
+      });
 
     }
   }

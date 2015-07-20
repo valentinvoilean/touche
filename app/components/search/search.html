@@ -1,0 +1,28 @@
+<section class="search__base" ng-class="vm.showSearch">
+  <div class="search__content">
+    <h2 class="search__hl">Search</h2>
+    <div class="search__closeBtn"></div>
+    <form>
+      <label class="search__label" for="name">name</label>
+      <input class="search__name" id="name" name="name" placeholder="write name">
+
+      <label class="search__label" for="location">location</label>
+      <select class="search__location" name="location" id="location">
+        <option>select location</option>
+      </select>
+
+      <label class="search__label">is top?</label>
+
+      <input class="search__radio" type="radio" name="isTop" id="isTop" value="yes">
+      <label class="search__radioLabel" for="isTop">Yes</label>
+
+      <input class="search__radio" type="radio" name="isTop" id="isNotTop" value="no">
+      <label class="search__radioLabel" for="isNotTop">No</label>
+
+      <label class="search__label" for="popularity">popularity</label>
+      <input class="search__range" type="range" min=0 max=100 value="3" name="popularity" id="popularity">
+
+      <input class="search__submit" type="button" value="Submit">
+    </form>
+  </div>
+</section>

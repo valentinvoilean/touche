@@ -20,23 +20,23 @@
   }
 
   &__content {
-    background: #fff;
-    width: 96%;
-    height: calc(100% - 4vw);
-    margin: 2vw;
-    color: #434752;
-    box-sizing: border-box;
-    padding: 3vw;
-    border-radius: 5px;
+    @include rem(border-radius, 5px);
     z-index: index($z-layers, lightboxContent);
+    background: $c2;
+    color: $c11;
+    width: 96%;
+    margin: 2vw;
+    height: calc(100% - 4vw);
+    padding: 3vw;
+    box-sizing: border-box;
     position: relative;
   }
 
   &__content > header {
-    width: calc(100% - 4vw);
-    background-color: #fff;
+    @include rem(border-radius, 5px);
     z-index: index($z-layers, topnavFlyout);
-    border-radius: 5px;
+    background-color: $c2;
+    width: calc(100% - 4vw);
   }
 
   &__content > article {
@@ -46,12 +46,12 @@
 
   &__backButton {
     background: url(../img/back.png);
-    max-width: 30px;
-    max-height: 30px;
+    @include rem(max-width, 30px);
+    @include rem(max-height, 30px);
     width: 3vw;
     height: 3vw;
-    background-size: 100%;
     margin: 5vw;
+    background-size: 100%;
     cursor: pointer;
     border: 0;
     outline: none;
