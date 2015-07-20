@@ -42,7 +42,7 @@
 
     function addEvents() {
       $rootScope.$on('search:options', function (event, data) {
-        console.log(data);
+        vm.filterOptions = data;
       });
     }
 
