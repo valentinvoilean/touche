@@ -8,7 +8,6 @@
       'swagger-client',
       'ui.router',
       'myApp.actors',
-      'myApp.search',
       'myApp.profile'
     ])
 })();

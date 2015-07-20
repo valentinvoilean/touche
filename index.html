@@ -22,8 +22,8 @@
     <div class="search"></div>
     <div class="orderBy">
       <ul class="orderBy__list">
-        <li class="orderBy__item" ng-click="orderActors='name'">Order by <strong>name</strong></li>
-        <li class="orderBy__item" ng-click="orderActors='popularity'">Order by <strong>popularity</strong></li>
+        <li class="orderBy__item" ng-click="reverse=!reverse;order('name', reverse)">Order by <strong>name</strong></li>
+        <li class="orderBy__item" ng-click="reverse=!reverse;order('popularity', reverse)">Order by <strong>popularity</strong></li>
       </ul>
     </div>
   </header>
@@ -55,7 +55,6 @@
   <script src="app/components/actors/actors.directive.js"></script>
 
   <script src="app/components/actors/actors.controller.js"></script>
-  <script src="app/components/search/search.controller.js"></script>
   <script src="app/components/profile/profile.controller.js"></script>
 </body>
 </html>

@@ -20,11 +20,5 @@
         controller:   'ActorsController',
         controllerAs: 'vm'
       })
-      .state('actors.search', {
-        url:          '/search?name&location&top&popularity',
-        templateUrl:  'app/components/search/search.html',
-        controller:   'SearchController',
-        controllerAs: 'vm'
-      })
   }
 })();
