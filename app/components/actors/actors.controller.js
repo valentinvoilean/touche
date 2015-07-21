@@ -14,6 +14,7 @@
     var orderBy = $filter('orderBy');
 
     vm.activate = activate;
+    vm.popularityFilter = popularityFilter;
 
     $rootScope.order = order;
 
@@ -44,6 +45,26 @@
       $rootScope.$on('search:options', function (event, data) {
         vm.filterOptions = data;
       });
+
+      $rootScope.$on('search:rangeOptions', function (event, data) {
+        vm.rangeOptions = data;
+        vm.popularityFilter();
+      });
+    }
+
+    function popularityFilter(data) {
+      if (data) {
+        if (vm.rangeOptions) {
+          var minMax = vm.rangeOptions.split(';'),
+            min = minMax[0],
+            max = minMax[1];
+
+          return (data.popularity >= min && data.popularity <= max);
+        }
+        else {
+          return data;
+        }
+      }
     }
 
   }

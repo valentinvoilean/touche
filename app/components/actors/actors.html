@@ -1,5 +1,5 @@
 <ul class="actor__list">
-  <li class="actor__item" ng-repeat="actor in vm.actors | filter: vm.filterOptions">
+  <li class="actor__item" ng-repeat="actor in vm.actors | filter: vm.filterOptions | filter: vm.popularityFilter">
     <article>
 
       <div class="actor__table">

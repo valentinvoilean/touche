@@ -52,10 +52,9 @@
       if (vm.name) { options.name = vm.name; }
       if (vm.location) { options.location = vm.location; }
       if (vm.top) { options.top = vm.top; }
-      if (vm.popularityMin) { options.popularityMin = vm.popularityMin; }
-      if (vm.popularityMax) { options.popularityMax = vm.popularityMax; }
 
       $rootScope.$emit('search:options', options);
+      $rootScope.$emit('search:rangeOptions', vm.popularity);
     }
 
   }
