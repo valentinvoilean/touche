@@ -5,10 +5,10 @@
     .module('myApp.search', [])
     .controller('SearchController', SearchController);
 
-  SearchController.$inject = ['$rootScope','$stateParams', 'dataService'];
+  SearchController.$inject = ['$rootScope'];
 
   /* @ngInject */
-  function SearchController($rootScope, $stateParams, dataService) {
+  function SearchController($rootScope) {
     /* jshint validthis: true */
     var vm = this;
 
