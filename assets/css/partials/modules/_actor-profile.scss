@@ -45,15 +45,23 @@
   }
 
   &__backButton {
+    @include rem(width, 15px);
+    @include rem(height, 15px);
     background: url(../img/back.png);
-    @include rem(max-width, 30px);
-    @include rem(max-height, 30px);
-    width: 3vw;
-    height: 3vw;
     margin: 5vw;
     background-size: 100%;
     cursor: pointer;
     border: 0;
     outline: none;
+
+    @include breakpoint($tablet) {
+      @include rem(width, 20px);
+      @include rem(height, 20px);
+    }
+
+    @include breakpoint($desktop) {
+      @include rem(width, 30px);
+      @include rem(height, 30px);
+    }
   }
 }
