@@ -47,9 +47,9 @@
   &__backButton {
     @include rem(width, 15px);
     @include rem(height, 15px);
-    background: url(../img/back.png);
-    margin: 5vw;
-    background-size: 100%;
+    @include rem(margin, 15px);
+    background: url(../img/back.png) no-repeat;
+    background-size: rem(15px) rem(15px);
     cursor: pointer;
     border: 0;
     outline: none;
@@ -57,11 +57,13 @@
     @include breakpoint($tablet) {
       @include rem(width, 20px);
       @include rem(height, 20px);
+      background-size: rem(20px) rem(20px);
     }
 
     @include breakpoint($desktop) {
       @include rem(width, 30px);
       @include rem(height, 30px);
+      background-size: rem(30px) rem(30px);
     }
   }
 }
