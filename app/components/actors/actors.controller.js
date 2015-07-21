@@ -10,11 +10,10 @@
   /* @ngInject */
   function ActorsController(dataService, $rootScope, $filter, $stateParams) {
     /* jshint validthis: true */
-    var vm = this;
-    var orderBy = $filter('orderBy');
+    var vm = this,
+      actorsList;
 
     vm.activate = activate;
-    vm.popularityFilter = popularityFilter;
 
     $rootScope.order = order;
 
@@ -29,7 +28,8 @@
 
     function getActors() {
       dataService.get(function(data){
-        vm.actors = data.data;
+        actorsList = data.data;
+        vm.actors = actorsList;
 
         if ($stateParams.orderBy) {
           $rootScope.orderActors = $stateParams.orderBy;
@@ -38,7 +38,7 @@
     }
 
     function order(predicate, reverse) {
-      vm.actors = orderBy(vm.actors, predicate, reverse);
+      vm.actors = $filter('orderBy')(vm.actors, predicate, reverse);
     }
 
     function addEvents() {
@@ -47,24 +47,8 @@
       });
 
       $rootScope.$on('search:rangeOptions', function (event, data) {
-        vm.rangeOptions = data;
-        vm.popularityFilter();
+        vm.actors = $filter('popularityFilter')(actorsList, data)
       });
-    }
-
-    function popularityFilter(data) {
-      if (data) {
-        if (vm.rangeOptions) {
-          var minMax = vm.rangeOptions.split(';'),
-            min = minMax[0],
-            max = minMax[1];
-
-          return (data.popularity >= min && data.popularity <= max);
-        }
-        else {
-          return data;
-        }
-      }
     }
 
   }
