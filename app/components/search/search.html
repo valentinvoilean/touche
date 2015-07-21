@@ -23,8 +23,10 @@
       <label class="search__radioLabel" for="isNotTop">No</label>
 
       <label class="search__label" for="popularity">popularity</label>
-      <input ng-model="vm.popularityMin" class="search__range" type="range" min=0 max=100 name="popularity" id="popularity">
-      <input ng-model="vm.popularityMax" class="search__range" type="range" min=0 max=100 name="popularity" id="popularity">
+
+      <div class="search__range">
+        <input ng-model="vm.popularity" type="text" id="mySlider1" slider options="vm.sliderOptions" id="popularity" />
+      </div>
 
       <input class="search__submit" type="submit" value="Submit">
     </form>

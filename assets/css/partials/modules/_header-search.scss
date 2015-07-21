@@ -184,17 +184,14 @@
     }
   }
 
-  &__range {
-    float: left;
-  }
-
   &__submit {
     @include rem(border-radius, 10px);
-    @include rem(margin-top, 20px);
+    @include rem(margin-top, 40px);
     @include rem(font-size, 20px);
     @include rem(line-height, 40px);
     @include rem(height, 40px);
-    font-weight: normal;
+    font-family: MyriadPro;
+    font-weight: 300;
     border: 0;
     outline: 0;
     clear: both;
@@ -203,5 +200,40 @@
     width: 100%;
     background: $c9;
     color: $c2;
+  }
+
+  &__range {
+    float:left;
+    width: 100%;
+    clear:both;
+
+    .jslider {
+
+      div.jslider-label { display: none; }
+
+      div.jslider-value { top: auto; bottom: -20px; }
+
+      div.jslider-pointer {
+        @include rem(border-radius, 10px);
+        @include rem(width, 20px);
+        @include rem(height, 20px);
+        @include rem(top, -7px);
+        background-color: $c5;
+        background-image: none;
+      }
+
+      div.jslider-bg i.range {
+        background-color: $c5;
+        background-image: none;
+      }
+
+      div.jslider-value {
+        @include rem(font-size, 16px);
+      }
+
+      div.jslider-value.jslider-value-to {
+        left: 60%;
+      }
+    }
   }
 }

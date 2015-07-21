@@ -5,6 +5,7 @@
   angular
     .module('myApp', [
       'ngAnimate',
+      'ngSlider',
       'swagger-client',
       'ui.router',
       'myApp.actors',

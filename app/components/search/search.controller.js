@@ -16,6 +16,14 @@
     vm.title = 'SearchController';
     vm.submit = filterList;
 
+    vm.popularity = '1;100';
+
+    vm.sliderOptions = {
+      from: 0,
+      to: 100,
+      step: 1
+    };
+
     activate();
 
     ////////////////
