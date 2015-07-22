@@ -14,7 +14,8 @@ function actorProfile() {
     restrict:    'EA',
     replace: true,
     scope: {
-      actorProfile: '='
+      actorProfile: '=',
+      showProfile: '='
     },
     bindToController: true
 

@@ -4,7 +4,7 @@
 
       <div class="actor__table">
         <div class="actor__cell">
-          <div class="actor__imgWrapper" ng-click="vm.profileDisplay = actor.identifier">
+          <div class="actor__imgWrapper" ng-click="vm.loadProfile(actor.identifier)">
             <img class="actor__img" alt="{{actor.name}}" ng-src="{{actor.profile_path}}"/>
           </div>
         </div>
@@ -27,4 +27,4 @@
   </li>
 </ul>
 
-<div actor-profile="vm.profileDisplay"></div>
+<div actor-profile="vm.profileDisplay" show-profile="vm.showProfile"></div>
