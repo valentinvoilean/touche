@@ -23,8 +23,8 @@
     <div class="search__icon" ng-click="vm.displaySearchFlyout()"></div>
     <div class="orderBy">
       <ul class="orderBy__list">
-        <li class="orderBy__item" ng-click="reverse=!reverse;order('name', reverse)">Order by <strong>name</strong></li>
-        <li class="orderBy__item" ng-click="reverse=!reverse;order('popularity', reverse)">Order by <strong>popularity</strong></li>
+        <li class="orderBy__item" ng-click="vm.reverseName=!vm.reverseName;order('name', vm.reverseName)">Order by <strong>name</strong></li>
+        <li class="orderBy__item" ng-click="vm.reversePopularity=!vm.reversePopularity;order('popularity', vm.reversePopularity)">Order by <strong>popularity</strong></li>
       </ul>
     </div>
   </header>

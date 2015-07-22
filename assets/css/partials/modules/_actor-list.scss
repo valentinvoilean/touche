@@ -46,6 +46,7 @@
     border: rem(5px) solid black;
     overflow: hidden;
     display: block;
+    cursor: pointer;
 
     @include breakpoint($tablet) {
       @include rem(border-radius, 150px);
