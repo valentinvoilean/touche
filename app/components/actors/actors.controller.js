@@ -16,8 +16,6 @@
 
     vm.activate = activate;
 
-    $rootScope.order = orderList;
-
     activate();
 
     ////////////////
@@ -25,7 +23,7 @@
     function activate() {
       getActors();
       addEvents();
-      orderList($stateParams.orderBy, true); // order the list by url parameter
+      orderList(null, [$stateParams.orderBy, true]); // order the list by url parameter
     }
 
     function getActors() {
@@ -37,15 +35,19 @@
       });
     }
 
-    function orderList(predicate, reverse) {
-      if (predicate) {
-        vm.actors = $filter('orderBy')(vm.actors, predicate, reverse)
-      }
-    }
-
     function addEvents() {
       $rootScope.$on('search:options', applyGeneralFilter);
       $rootScope.$on('search:rangeOptions', applyRangeFilter);
+      $rootScope.$on('order:options', orderList);
+    }
+
+    function orderList(event, data) {
+      var predicate = data[0];
+      var reverse = data[1];
+
+      if (predicate) {
+        vm.actors = $filter('orderBy')(vm.actors, predicate, reverse)
+      }
     }
 
     function applyGeneralFilter(event, data) {
