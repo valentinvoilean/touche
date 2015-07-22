@@ -7,7 +7,7 @@ window.ActorsSchema = {
     "apiDeclaration": {
       "apiVersion":     "1.0",
       "swaggerVersion": "1.2",
-      "basePath":       "http://test.gotouche.com/rest/actors/",
+      "basePath":       "http://test.gotouche.com",
       "resourcePath":   "/rest/actors",
       "produces":       ["application/json"],
       "apis":           [{
