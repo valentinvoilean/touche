@@ -62,7 +62,6 @@
     }
 
     function applyRangeFilter(event, data) {
-      console.log(data);
       vm.actors = $filter('popularityFilter')(actorsList, data);
     }
 

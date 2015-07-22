@@ -12,7 +12,6 @@
     /* jshint validthis: true */
     var vm = this;
 
-    vm.activate = activate;
     vm.title = 'SearchController';
     vm.submit = filterList;
 
@@ -24,24 +23,7 @@
       step: 1
     };
 
-    activate();
-
     ////////////////
-
-    function activate() {
-      watchHeaderSearchIcon();
-    }
-
-    /**
-     * Display the search flyout on click the search icon
-     */
-    function watchHeaderSearchIcon() {
-      $rootScope.$watch('actorSearch', function () {
-        if ($rootScope.actorSearch) {
-          vm.showSearch = 'search__animate'
-        }
-      });
-    }
 
     /**
      * Filter the list results on submit the form

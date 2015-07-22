@@ -15,12 +15,12 @@
   <link rel="stylesheet" type="text/css" href="node_modules/ng-slider/dist/css/ng-slider.min.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-controller="MainCtrl as vm">
   <header class="navigation-header">
     <a class="logo" ui-sref="actors">
       <img alt="paytouch" src="assets/img/paytouch.png">
     </a>
-    <div class="search__icon" ng-click="actorSearch=true"></div>
+    <div class="search__icon" ng-click="vm.displaySearchFlyout()"></div>
     <div class="orderBy">
       <ul class="orderBy__list">
         <li class="orderBy__item" ng-click="reverse=!reverse;order('name', reverse)">Order by <strong>name</strong></li>
@@ -34,6 +34,7 @@
   <![endif]-->
 
   <div ui-view></div>
+  <div search-profiles="{{vm.displaySearch}}"></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -50,6 +51,7 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/swagger-angular-client/dist/swagger-angular-client.js"></script>
   <script src="app/app.module.js"></script>
+  <script src="app/app.controller.js"></script>
   <script src="app/app.run.js"></script>
   <script src="app/app.config.js"></script>
 

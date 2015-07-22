@@ -7,18 +7,16 @@ angular
   .directive('searchProfiles', searchProfiles);
 
 function searchProfiles() {
-  var directive = {
+  return {
     templateUrl:  'app/components/search/search.html',
     controller:   'SearchController',
     controllerAs: 'vm',
     restrict:    'EA',
     replace: true,
     scope: {
-      searchProfiles: '='
+      searchProfiles: '@'
     },
     bindToController: true
-
   };
 
-  return directive;
 }
