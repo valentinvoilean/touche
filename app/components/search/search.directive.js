@@ -14,7 +14,7 @@ function searchProfiles() {
     restrict:    'EA',
     replace: true,
     scope: {
-      searchProfiles: '@'
+      searchProfiles: '='
     },
     bindToController: true
   };
